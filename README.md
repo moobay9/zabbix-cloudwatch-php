@@ -13,6 +13,7 @@ git clone https://github.com/moobay9/zabbix-cloudwatch-php.git
 * config.php を作る
 
 ```
+vi /path/to/zabbix/externalscripts/zabbix-cloudwatch-php/config.php
 <?php  
 $config = array(  
     'AWS_KEY'    => 'XXXXXXXXXXXXXXXXXXXX',  
