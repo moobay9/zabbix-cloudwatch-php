@@ -3,16 +3,18 @@
 // Include the SDK using the Composer autoloader
 require 'zabbi-cloudwatch-php/vendor/autoload.php';
 require 'zabbi-cloudwatch-php/config.php';
- 
+
+$reg = 'ap-northeast-1';
+
 use Aws\CloudWatch\CloudWatchClient;
  
-$client = CloudWatchClient::factory(array(
-        'key'    => $config['AWS_KEY'],
-        'secret' => $config['AWS_SECRET'],
-        'region' => $config['REGION'],
-));
+$options = getopt('n:m:d:v:p:s:', array('key:','sec:'));
 
-$options = getopt('n:m:d:v:p:s:');
+$client = CloudWatchClient::factory(array(
+        'key'    => $options['key'],
+        'secret' => $options['sec'],
+        'region' => $reg,
+));
 
 $result = $client->getMetricStatistics(array(
     'Namespace'  => $options['n'],
