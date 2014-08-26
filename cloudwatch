@@ -28,8 +28,8 @@ $result = $client->getMetricStatistics(array(
  
 foreach ($result as $k => $v)
 {
-	if($k === 'Datapoints')
-	{
-		echo $v['0'][$options['s']];
-	}
+    if($k === 'Datapoints')
+    {
+        echo $v['0'][$options['s']];
+    }
 }
