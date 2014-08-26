@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 // Include the SDK using the Composer autoloader
 require 'vendor/autoload.php';

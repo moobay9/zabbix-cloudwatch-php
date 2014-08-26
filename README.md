@@ -15,7 +15,13 @@ $config = array(
 );  
 ```
 
+* ZABBIX サーバ側に設置する
 
-* 引数を設定する
+```
+cd /path/to/zabbix/externalscripts
+git clone https://github.com/moobay9/zabbix-cloudwatch-php.git
+```
 
-例) php cloudwatch.php -n 'AWS/RDS' -m CPUUtilization -d DBInstanceIdentifier -v 'levis-club-rds' -p 300 -s Average
+* 使い方 
+
+例) zabbix-cloudwatch-php/cloudwatch -n 'AWS/RDS' -m CPUUtilization -d DBInstanceIdentifier -v 'levis-club-rds' -p 300 -s Average
