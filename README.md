@@ -1,9 +1,9 @@
 Zabbix 用 CloudWatch metrics 取得
 =================================
 
-# 使い方
+## 使い方
 
-## config.php を作る
+* config.php を作る
 
 
 ```
@@ -16,6 +16,6 @@ $config = array(
 ```
 
 
-## 引数を設定する
+* 引数を設定する
 
 例) php cloudwatch.php -n 'AWS/RDS' -m CPUUtilization -d DBInstanceIdentifier -v 'levis-club-rds' -p 300 -s Average
