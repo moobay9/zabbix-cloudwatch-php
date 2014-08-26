@@ -8,6 +8,7 @@ Zabbix 用 CloudWatch metrics 取得
 ```
 cd /path/to/zabbix/externalscripts
 git clone https://github.com/moobay9/zabbix-cloudwatch-php.git
+mv zabbix-cloudwatch-php/cloudwatch cloudwatch
 ```
 
 * config.php を作る
@@ -24,4 +25,4 @@ $config = array(
 
 * 使い方 
 
-例) zabbix-cloudwatch-php/cloudwatch -n 'AWS/RDS' -m CPUUtilization -d DBInstanceIdentifier -v 'levis-club-rds' -p 300 -s Average
+例) cloudwatch -n 'AWS/RDS' -m CPUUtilization -d DBInstanceIdentifier -v 'club-rds' -p 300 -s Average
