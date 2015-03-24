@@ -21,6 +21,7 @@ mv zabbix-cloudwatch-php/cloudwatch cloudwatch
 ```
 {$AWS_KEY}    => 'XXXXXXXXXXXXXXXXXXXX'
 {$AWS_SECRET} => 'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY/ZZZZZZZZ'
+{$HOST} => '<hostname>'
 ```
 
 * アイテムの登録

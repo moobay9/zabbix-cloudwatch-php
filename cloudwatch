@@ -2,7 +2,7 @@
 <?php
 // Include the SDK using the Composer autoloader
 require 'zabbi-cloudwatch-php/vendor/autoload.php';
-require 'zabbi-cloudwatch-php/config.php';
+//require 'zabbi-cloudwatch-php/config.php';
 
 $reg = 'ap-northeast-1';
 
