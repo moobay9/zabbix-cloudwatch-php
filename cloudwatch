@@ -1,8 +1,8 @@
 #!/usr/bin/php
 <?php
 // Include the SDK using the Composer autoloader
-require 'zabbi-cloudwatch-php/vendor/autoload.php';
-//require 'zabbi-cloudwatch-php/config.php';
+require 'zabbix-cloudwatch-php/vendor/autoload.php';
+//require 'zabbix-cloudwatch-php/config.php';
 
 $reg = 'ap-northeast-1';
 
@@ -28,7 +28,7 @@ $result = $client->getMetricStatistics(array(
  
 foreach ($result as $k => $v)
 {
-    if($k === 'Datapoints')
+    if($k === 'Datapoints' and isset($v['0']))
     {
         echo $v['0'][$options['s']];
     }
