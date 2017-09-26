@@ -21,7 +21,7 @@ mv zabbix-cloudwatch-php/cloudwatch cloudwatch
 ```
 {$AWS_KEY}    => 'XXXXXXXXXXXXXXXXXXXX'
 {$AWS_SECRET} => 'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY/ZZZZZZZZ'
-{$HOST} => '<hostname>'
+{$AWS_HOST}   => '<hostname>'
 ```
 
 * アイテムの登録
@@ -30,5 +30,5 @@ mv zabbix-cloudwatch-php/cloudwatch cloudwatch
 
 
 ```
-cloudwatch["-n","AWS/RDS","-m","DatabaseConnections","-d","DBInstanceIdentifier","-v","{HOST.NAME}","-s","Average","-p","300","--key","{$AWS_KEY}","--sec","{$AWS_SECRET}"]
+cloudwatch["-n","AWS/RDS","-m","DatabaseConnections","-d","DBInstanceIdentifier","-v","{AWS_HOST}","-s","Average","-p","300","--key","{$AWS_KEY}","--sec","{$AWS_SECRET}"]
 ```

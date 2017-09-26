@@ -1,0 +1,38 @@
+#!/usr/bin/php
+<?php
+// Include the SDK using the Composer autoloader
+require 'zabbix-cloudwatch-php/vendor/autoload.php';
+//require 'zabbix-cloudwatch-php/config.php';
+
+$reg = 'ap-northeast-1';
+
+use Aws\CloudWatch\CloudWatchClient;
+ 
+$options = getopt('n:m:d:v:p:s:', array('key:','sec:'));
+
+$client = CloudWatchClient::factory(array(
+        'key'    => $options['key'],
+        'secret' => $options['sec'],
+        'region' => $reg,
+));
+
+$result = $client->getMetricStatistics(array(
+    'Namespace'  => $options['n'],
+    'MetricName' => $options['m'],
+    'Dimensions' => array(
+        array('Name' => $options['d'], 'Value' => $options['v']),
+        array('Name' => 'Role', 'Value' => 'WRITER'),
+    ),
+    'StartTime'  => strtotime('-'.$options['p'].' sec'),
+    'EndTime'    => strtotime('now'),
+    'Period'     => $options['p'],
+    'Statistics' => array($options['s']),
+));
+ 
+foreach ($result as $k => $v)
+{
+    if($k === 'Datapoints' and isset($v['0']))
+    {
+        echo $v['0'][$options['s']];
+    }
+}
